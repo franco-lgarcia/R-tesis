@@ -10,11 +10,15 @@ source(here::here("scripts", "02_load_data.R"))
 # Limpiar Bases de datos
 source(here::here("scripts", "03_clean_data.R"))
 
+# Estadisticas Descriptivas basicas
+source(here::here("scripts", "04_descriptive_data.R"))
+
 # Estimar modelos
-source(here::here("scripts", "04_model_logit.R"))
+source(here::here("scripts", "05_model_logit.R"))
 
 # Graficar resultados
-source(here::here("scripts", "05_plots.R"))
+source(here::here("scripts", "06_plots.R"))
 
 # Exportar tablas
-source(here::here("scripts", "06_tables.R"))
+source(here::here("scripts", "07_tables.R"))
+
