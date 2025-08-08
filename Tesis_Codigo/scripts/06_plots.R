@@ -1,2 +1,2 @@
-# === 05_plots.R ===
+# === 06_plots.R ===
 # Gráficos de resultados
