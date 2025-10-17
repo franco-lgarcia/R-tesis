@@ -4,7 +4,7 @@ library(tidyr)
 # 1) Recorte del universo muestral
 base_u <- base_raw %>%
   filter(
-    CH06 >= 18 & CH06 <= 23,      # Edad entre 18 y 22 años
+    CH06 >= 17 & CH06 <= 23,      # Edad entre 18 y 22 años
     CH07 == 5,                    # Solteros
     NIVEL_ED %in% c(4, 5)         # Secundario completo o universitario incompleto
   )

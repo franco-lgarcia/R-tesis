@@ -103,5 +103,5 @@ n_complete <- sum(complete.cases(base_modelo))   # o nrow(na.omit(base_modelo))
 pct_complete <- 100 * n_complete / n_total
 
 cat("Observaciones totales:", n_total, "\n")
-cat("Observaciones completas:", n_complete, "\n")
+cat("Observaciones disponibles:", n_complete, "\n")
 cat("Porcentaje completas:", round(pct_complete, 2), "%\n")

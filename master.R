@@ -14,8 +14,11 @@ source(here::here("scripts", "03_clean_data.R"))
 # Descripcion basica de la poblacion
 source(here::here("scripts", "04_descriptive_data.R"))
 
+# Crear variables para modelo 
+source(here::here("scripts", "05_variables.R"))
+
 # Estimar modelos
-source(here::here("scripts", "04_model_logit.R"))
+source(here::here("scripts", "06_model_logit.R"))
 
 # Graficar resultados
 source(here::here("scripts", "05_plots.R"))
