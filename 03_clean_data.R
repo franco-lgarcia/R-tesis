@@ -193,5 +193,31 @@ cat("✅ Asisten a educación superior:", n_asisten, "\n")
 cat("🚫 No asisten a educación superior:", n_no_asisten, "\n")
 cat("📊 Porcentaje que asiste:", porcentaje_asisten, "%\n")
 
+# =====================================================================
+# Totales ponderados (representación poblacional) ---
+# =====================================================================
+
+# Variable de asistencia
+base_filtrada <- base_filtrada %>%
+  mutate(asiste_sup = CH10 == 1 & CH12 %in% c(6, 7, 8))
+
+# Total expandido
+total_exp <- sum(base_filtrada$PONDERA_ind, na.rm = TRUE)
+total_exp_mill <- total_exp / 1e6  # En millones de personas
+
+# Desglose ponderado
+desglose <- base_filtrada %>%
+  group_by(asiste_sup) %>%
+  summarise(personas = sum(PONDERA_ind, na.rm = TRUE), .groups = "drop") %>%
+  mutate(pct = 100 * personas / sum(personas))
+
+cat("\n📈 [Ponderado por EPH]\n")
+cat("👥 Casos muestrales:", n_total, "\n")
+cat("👥 Representan aproximadamente:", round(total_exp_mill, 2), "millones de jóvenes urbanos\n\n")
+
+print(desglose)
+
+
+
 
 
